@@ -4,19 +4,18 @@
       <md-app-toolbar class="md-primary">
         <span class="md-title">My Title</span>
       </md-app-toolbar>
-
       <md-app-drawer md-permanent="full">
         <md-toolbar class="md-transparent" md-elevation="0">
           ---
         </md-toolbar>
 
         <md-list>
-          <md-list-item>
+          <md-list-item v-for="(player, index) in players" :key="index">
             <md-icon>move_to_inbox</md-icon>
-            <span class="md-list-item-text">Ando</span>
+            <span class="md-list-item-text">{{player}}</span>
           </md-list-item>
 
-          <md-list-item>
+          <!-- <md-list-item>
             <md-icon>send</md-icon>
             <span class="md-list-item-text">Amos</span>
           </md-list-item>
@@ -29,7 +28,7 @@
           <md-list-item>
             <md-icon>error</md-icon>
             <span class="md-list-item-text">Si dia</span>
-          </md-list-item>
+          </md-list-item> -->
         </md-list>
       </md-app-drawer>
 
@@ -47,19 +46,26 @@
   </div>
 </template>
 
-<style scoped>
-  .md-app {
-    max-height: 400px;
-    border: 1px solid rgba(#000, .12);
-  }
-  .md-drawer {
-    width: 230px;
-    max-width: calc(100vw - 125px);
-  }
-</style>
-
 <script>
 export default {
-  name: 'Waterfall'
+  name: 'Waterfall',
+  computed: {
+    players () {
+      return this.$store.state.players
+    }
+  },
+  created () {
+  }
 }
 </script>
+
+<style scoped>
+.md-app {
+  max-height: 400px;
+  border: 1px solid rgba(#000, .12);
+}
+.md-drawer {
+  width: 230px;
+  max-width: calc(100vw - 125px);
+}
+</style>

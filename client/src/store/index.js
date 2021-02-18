@@ -12,11 +12,13 @@ export default new Vuex.Store({
     setNextPage (state, payload) {
       state.players.push(payload.username)
       router.push('/about')
+    },
+    setPlayers (state, payload) {
+      state.palyers = payload // terserah mau dipush atau di reassign
     }
   },
   actions: {
     nextPage (context, payload) {
-      console.log('================')
       context.commit('setNextPage', payload)
     }
   },
