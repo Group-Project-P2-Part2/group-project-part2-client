@@ -1,7 +1,6 @@
 <template>
   <div>
-    <ModalStartButton
-    />
+    <ModalStartButton />
   </div>
 </template>
 
@@ -19,6 +18,9 @@ export default {
     }
   },
   methods: {
+  },
+  created () {
+    // this.$store.commit('players', [])
   }
 
 }

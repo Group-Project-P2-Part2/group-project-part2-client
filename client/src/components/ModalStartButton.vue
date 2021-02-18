@@ -1,30 +1,30 @@
 <template>
 <div>
   <md-dialog :md-active.sync="showDialog">
-    <md-dialog-title>Preferences</md-dialog-title>
+    <md-dialog-title>Input Your username</md-dialog-title>
 
-    <md-tabs md-dynamic-height>
-      <md-tab md-label="Username">
-        <div class="md-layout-item md-small-size-100">
-          <md-field>
-          <md-dialog-content>
-            <label for="last-name">ex. kelingkingmaut</label>
-          <md-input v-model="username" />
+      <md-tabs md-dynamic-height>
+        <md-dialog-content>
+          <md-tab md-label="Username">
+            <div class="md-layout-item md-small-size-100">
+              <md-field>
+                <label for="last-name">ex. kelingkingmaut</label>
+                <md-input v-model="username" />
+              </md-field>
+              </div>
+          </md-tab>
         </md-dialog-content>
-      </md-field>
-  </div>
-      </md-tab>
 
-      <md-tab md-label="Activity">
+      <!-- <md-tab md-label="Activity">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
-      </md-tab>
+      </md-tab> -->
     </md-tabs>
     <md-dialog-actions>
-      <md-button class="md-primary" @click="nextPage">Start</md-button>
+      <md-button class="md-primary" @click.prevent="nextPage">Start</md-button>
     </md-dialog-actions>
   </md-dialog>
 
-  <md-button class="md-primary md-raised" @click="showDialog = true">Show Dialog</md-button>
+  <md-button class="md-primary md-raised" @click.prevent="showDialog = true">Show Dialog</md-button>
 </div>
 </template>
 

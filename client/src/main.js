@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueMaterial from 'vue-material'
+// import VueSocketIO from 'vue-socket.io'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
-
+import './lib/socket'
 Vue.use(VueMaterial)
 
 Vue.config.productionTip = false
