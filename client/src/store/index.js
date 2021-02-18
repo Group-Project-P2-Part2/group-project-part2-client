@@ -14,12 +14,15 @@ export default new Vuex.Store({
       router.push('/about')
     },
     setPlayers (state, payload) {
-      state.palyers = payload // terserah mau dipush atau di reassign
+      state.players = payload // terserah mau dipush atau di reassign
     }
   },
   actions: {
     nextPage (context, payload) {
       context.commit('setNextPage', payload)
+    },
+    SOCKET_hai (context, payload) {
+      context.commit('setPlayers', payload)
     }
   },
   modules: {

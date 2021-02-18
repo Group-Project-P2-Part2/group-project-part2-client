@@ -32,6 +32,11 @@
 // import FormUserName from './FormUserName'
 export default {
   name: 'DialogCustom',
+  sockets: {
+    connect () {
+      console.log('socket connected')
+    }
+  },
   components: {
   },
   data: () => ({
@@ -40,6 +45,7 @@ export default {
   }),
   methods: {
     nextPage () {
+      this.$socket.emit('hai', this.username)
       this.$store.dispatch('nextPage', { username: this.username, next: true })
     }
   }
