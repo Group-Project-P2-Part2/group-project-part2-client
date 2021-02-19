@@ -15,7 +15,10 @@ export default new Vuex.Store({
     //   router.push('/about')
     // },
     setPlayers (state, payload) {
-      state.players.push(payload) // terserah mau dipush atau di reassign
+      state.players = payload // terserah mau dipush atau di reassign
+    },
+    addPlayers (state, payload) {
+      state.players.push(payload)
     },
     setAnswer (state, payload) {
       state.answer.push(payload)
@@ -23,7 +26,7 @@ export default new Vuex.Store({
   },
   actions: {
     addPlayers (context, payload) {
-      context.commit('setPlayers', payload)
+      context.commit('addPlayers', payload)
     },
     SOCKET_hai (context, payload) {
       context.commit('setPlayers', payload)

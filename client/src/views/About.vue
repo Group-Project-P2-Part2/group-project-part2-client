@@ -75,6 +75,9 @@ export default {
     players () {
       return this.$store.state.players
     },
+    totalPlayer () {
+      return this.players.length
+    },
     answer () {
       return this.$store.state.answer
     },
@@ -85,7 +88,12 @@ export default {
     //   return `https://avatars.dicebear.com/api/human/${+new Date()}.svg`
     // }
   },
-  created () {
+  watch: {
+    totalPlayer (newPlayer, oldPlayer) {
+      if (newPlayer === 2) {
+        console.log('haii')
+      }
+    }
   }
 }
 </script>

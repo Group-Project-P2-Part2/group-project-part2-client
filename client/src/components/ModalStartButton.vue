@@ -54,7 +54,6 @@ export default {
       this.$socket.emit('hai', newPlayer)
       this.$router.push('/about')
       this.$store.dispatch('addPlayers', newPlayer)
-      // this.$store.commit({ username: this.username, Nyawa: 3 })
     }
   }
 }
