@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div>
-      <h1>HELLO WORLD</h1>
+      <h1>HELLO</h1>
     </div>
     <div>
       <ModalStartButton />

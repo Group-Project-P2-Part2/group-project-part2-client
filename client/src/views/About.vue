@@ -15,7 +15,6 @@
             <md-avatar>
               <img :src="`https://avatars.dicebear.com/api/human/${player.id}.svg`">
             </md-avatar>
-            <p v-for="hati in player.nyawa" :key="hati">Hati</p>
             <span class="md-list-item-text" :class="{'user': player.username === getName}">{{player.username}}</span>
           </md-list-item>
         </md-list>
@@ -24,13 +23,17 @@
       <md-app-content>
         <div v-if="answer.length">
           <div>
-            <p v-for="(answr, index) in answer" :key="index" :class="{user: answr.answer === 'Benar'}">{{answr.username}} {{answr.answer}}</p>
+            <p v-for="(answr, index) in answer" :key="index" :class="{user: answr.answer === 'Benar'}">{{answr.username}}:  {{answr.answer}}</p>
           </div>
         </div>
-        <form @submit.prevent="sendAnswer">
-          <input type="text" v-model="input" :disabled="isCorrect">
-          <input type="submit" value="Send" :disabled="isCorrect">
-        </form>
+        <div id="text-room">
+          <form @submit.prevent="sendAnswer">
+            <div id="chat-room">
+              <input type="text" v-model="input" :disabled="isCorrect">
+              <md-input type="submit" value="Send" :disabled="isCorrect"/>
+            </div>
+          </form>
+        </div>
       </md-app-content>
     </md-app>
   </div>
@@ -96,7 +99,10 @@ export default {
   max-width: calc(100vw - 125px);
 }
 
-.user {
-  background-color: yellow;
+#chat-room {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  align-items: center;
 }
 </style>
