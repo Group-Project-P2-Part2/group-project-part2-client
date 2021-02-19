@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <ModalStartButton />
+  <div id="home">
+    <div>
+      <h1>HELLO WORLD</h1>
+    </div>
+    <div>
+      <ModalStartButton />
+    </div>
   </div>
 </template>
 
@@ -26,6 +31,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+  }
 </style>

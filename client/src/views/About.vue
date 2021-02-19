@@ -1,4 +1,5 @@
 <template>
+
   <div class="page-container">
     <md-app md-waterfall md-mode="fixed">
       <md-app-toolbar class="md-primary">
@@ -6,6 +7,7 @@
       </md-app-toolbar>
       <md-app-drawer md-permanent="full">
         <md-toolbar class="md-transparent" md-elevation="0">
+          Participants
         </md-toolbar>
 
         <md-list>
@@ -16,21 +18,6 @@
             <p v-for="hati in player.nyawa" :key="hati">Hati</p>
             <span class="md-list-item-text" :class="{'user': player.username === getName}">{{player.username}}</span>
           </md-list-item>
-
-          <!-- <md-list-item>
-            <md-icon>send</md-icon>
-            <span class="md-list-item-text">Amos</span>
-          </md-list-item>
-
-          <md-list-item>
-            <md-icon>delete</md-icon>
-            <span class="md-list-item-text">Mujib</span>
-          </md-list-item>
-
-          <md-list-item>
-            <md-icon>error</md-icon>
-            <span class="md-list-item-text">Si dia</span>
-          </md-list-item> -->
         </md-list>
       </md-app-drawer>
 
@@ -47,6 +34,7 @@
       </md-app-content>
     </md-app>
   </div>
+
 </template>
 
 <script>

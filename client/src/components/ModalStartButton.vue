@@ -1,23 +1,19 @@
 <template>
-<div>
+<div class="container">
   <md-dialog :md-active.sync="showDialog">
     <md-dialog-title>Input Your username</md-dialog-title>
-
       <md-tabs md-dynamic-height>
-        <md-dialog-content>
-          <md-tab md-label="Username">
-            <div class="md-layout-item md-small-size-100">
-              <md-field>
-                <label for="last-name">ex. kelingkingmaut</label>
-                <md-input v-model="username" />
-              </md-field>
-              </div>
-          </md-tab>
-        </md-dialog-content>
-
-      <!-- <md-tab md-label="Activity">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
-      </md-tab> -->
+        <md-tab md-label="Username">
+            <md-field>
+              <label for="last-name">username</label>
+              <md-input v-model="username" />
+            </md-field>
+        </md-tab>
+        <md-tab md-label="How To Play">
+          <md-field>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dignissimos  architecto tenetur consequuntur sapiente?</p>
+          </md-field>
+        </md-tab>
     </md-tabs>
     <md-dialog-actions>
       <md-button class="md-primary" @click.prevent="nextPage">Start</md-button>
@@ -60,7 +56,8 @@ export default {
 </script>
 
 <style  scoped>
-.md-dialog .md-dialog-container {
+.md-dialog {
   max-width: 768px;
+  left: 300px;
 }
 </style>
