@@ -46,9 +46,9 @@ export default {
         nyawa: 3,
         id: +new Date()
       }
+      localStorage.setItem('username', this.username)
       this.$socket.emit('hai', newPlayer)
       this.$router.push('/about')
-      // this.$store.commit({ username: this.username, Nyawa: 3 })
       this.$store.dispatch('addPlayers', newPlayer)
     }
   }
