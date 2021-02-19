@@ -11,9 +11,12 @@
         </md-toolbar>
 
         <md-list>
-          <md-list-item v-for="(player, index) in players" :key="index">
-            <md-icon>move_to_inbox</md-icon>
-            <span class="md-list-item-text">{{player}}</span>
+          <md-list-item v-for="(player) in players" :key="player.id">
+            <md-avatar>
+              <img :src="`https://avatars.dicebear.com/api/human/${player.id}.svg`">
+            </md-avatar>
+            <p v-for="hati in player.nyawa" :key="hati" >Hati</p>
+            <span class="md-list-item-text">{{player.username}}</span>
           </md-list-item>
         </md-list>
       </md-app-drawer>
@@ -40,10 +43,18 @@
 <script>
 export default {
   name: 'Waterfall',
+  data () {
+    return {
+      nyawa: 3
+    }
+  },
   computed: {
     players () {
       return this.$store.state.players
     }
+    // avatars () {
+    //   return `https://avatars.dicebear.com/api/human/${+new Date()}.svg`
+    // }
   },
   created () {
   }

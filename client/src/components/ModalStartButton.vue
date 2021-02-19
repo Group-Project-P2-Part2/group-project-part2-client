@@ -28,6 +28,11 @@
 // import FormUserName from './FormUserName'
 export default {
   name: 'DialogCustom',
+  sockets: {
+    connect () {
+      console.log('socket connected')
+    }
+  },
   components: {
   },
   data: () => ({
@@ -36,7 +41,15 @@ export default {
   }),
   methods: {
     nextPage () {
-      this.$store.dispatch('nextPage', { username: this.username, next: true })
+      const newPlayer = {
+        username: this.username,
+        nyawa: 3,
+        id: +new Date()
+      }
+      this.$socket.emit('hai', newPlayer)
+      this.$router.push('/about')
+      // this.$store.commit({ username: this.username, Nyawa: 3 })
+      this.$store.dispatch('addPlayers', newPlayer)
     }
   }
 }
