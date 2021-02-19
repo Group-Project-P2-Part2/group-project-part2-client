@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    players: []
+    players: [],
+    answer: []
   },
   mutations: {
     // setPlayers (state, payload) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     // },
     setPlayers (state, payload) {
       state.players.push(payload) // terserah mau dipush atau di reassign
+    },
+    setAnswer (state, payload) {
+      state.answer.push(payload)
     }
   },
   actions: {
@@ -23,6 +27,12 @@ export default new Vuex.Store({
     },
     SOCKET_hai (context, payload) {
       context.commit('setPlayers', payload)
+    },
+    SOCKET_sendAnswer (context, payload) {
+      context.commit('setAnswer', payload)
+    },
+    sendAnswer (context, payload) {
+      context.commit('setAnswer', payload)
     }
   },
   modules: {
